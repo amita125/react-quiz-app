@@ -1,0 +1,17 @@
+{
+    "setupFiles": [
+    "raf/polyfill",
+    "<rootDir>/src/Tests/App.test.js"
+    ],
+    "snapshotSerializers": [
+       "enzyme-to-json/serializer"
+    ],
+   "collectCoverage": true,
+   "collectCoverageFrom": "['src/**/*.{js,jsx}']",
+   "moduleNameMapper": {
+      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+   }
+    
+}
+
+  

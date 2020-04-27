@@ -5,10 +5,6 @@ import App from "../App";
 
 Enzyme.configure({ adapter: new Adapter() })
 
-// test('Checks App div loads', () => {
-//   const wrapper = shallow(<App />)
-//   expect(wrapper.find(".App").length).toEqual(1);
-// });
 
 describe("App", () => {
   it("Checks App div loads", () => {
