@@ -4,24 +4,24 @@ function Form() {
   return (
     <div>
       <form>
-        <div class="form-group row">
-          <label for="playerName" class="col-sm-2 col-form-label">
+        <div className="form-group row">
+          <label htmlFor="playerName" className="col-sm-2 col-form-label">
             Player Name
           </label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="playerName" />
+          <div className="col-sm-10">
+            <input type="text" className="form-control" id="playerName" name="playerName"/>
           </div>
         </div>
-        <div class="form-group row">
-          <label for="category" class="col-sm-2 col-form-label">
+        <div className="form-group row">
+          <label htmlFor="category" className="col-sm-2 col-form-label">
             Category
           </label>
-          <div class="col-sm-10">
+          <div className="col-sm-10">
             <select
-              class="custom-select my-1 mr-sm-2"
+              className="custom-select my-1 mr-sm-2"
               id="inlineFormCustomSelectPref"
             >
-              <option selected>Any Category</option>
+              {/* <option selected>Any Category</option> */}
               <option value="general">General Knowledge</option>
               <option value="science">Science and Nature</option>
               <option value="sports">Sports</option>
@@ -30,46 +30,46 @@ function Form() {
             </select>
           </div>
         </div>
-        <fieldset class="form-group">
-          <div class="row">
-            <legend class="col-form-label col-sm-2 pt-0">
+        <fieldset className="form-group">
+          <div className="row">
+            <legend className="col-form-label col-sm-2 pt-0">
               Select Difficulty
             </legend>
-            <div class="col-sm-10">
-              <div class="form-check form-check-inline">
+            <div className="col-sm-10">
+              <div className="form-check form-check-inline">
                 <input
-                  class="form-check-input"
+                  className="form-check-input"
                   type="radio"
                   name="difficulty"
                   id="inlineRadio1"
                   value="easy"
                 />
-                <label class="form-check-label" for="inlineRadio1">
+                <label className="form-check-label" htmlFor="inlineRadio1">
                   Easy
                 </label>
               </div>
-              <div class="form-check form-check-inline">
+              <div className="form-check form-check-inline">
                 <input
-                  class="form-check-input"
+                  className="form-check-input"
                   type="radio"
                   name="difficulty"
                   id="inlineRadio2"
                   value="medium"
                 />
-                <label class="form-check-label" for="inlineRadio2">
+                <label className="form-check-label" htmlFor="inlineRadio2">
                   Medium
                 </label>
               </div>
-              <div class="form-check form-check-inline">
+              <div className="form-check form-check-inline">
                 <input
-                  class="form-check-input"
+                  className="form-check-input"
                   type="radio"
                   name="difficulty"
                   id="inlineRadio3"
                   value="hard"
                   disabled
                 />
-                <label class="form-check-label" for="inlineRadio3">
+                <label className="form-check-label" htmlFor="inlineRadio3">
                   Hard
                 </label>
               </div>
@@ -77,9 +77,9 @@ function Form() {
           </div>
         </fieldset>
 
-        <div class="form-group row">
-          <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">
+        <div className="form-group row">
+          <div className="col-sm-10">
+            <button type="submit" className="btn btn-primary">
               Submit
             </button>
           </div>

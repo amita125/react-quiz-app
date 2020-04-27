@@ -3,8 +3,8 @@ import React from "react";
 export default function Navigation() {
   return (
     <div>
-      <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
+      <nav className="navbar navbar-light bg-light">
+        <a className="navbar-brand" href="#">
           Quiz Application
         </a>
       </nav>
