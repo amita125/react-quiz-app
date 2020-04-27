@@ -1,12 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Navigation() {
   return (
-    <div>
-      <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-          Quiz Application
-        </a>
+    <div className="navigation">
+      <nav class="navbar navbar-dark bg-dark" id="mainNav">
+        <Link to="/">Quiz Application</Link>
       </nav>
     </div>
   );

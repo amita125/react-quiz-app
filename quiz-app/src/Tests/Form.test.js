@@ -36,10 +36,6 @@ describe("Form", () => {
     const options = wrapper.find("option");
     expect(select).toHaveLength(1);
     expect(options).toHaveLength(5);
-
-    // expect(options.get(0).props("value")).toEqual("general");
-
-    // expect(wrapper.find('select').props().value).toBe('easy')
   });
 
   it("Tests the first dropdown option is the correct value", () => {
@@ -47,5 +43,11 @@ describe("Form", () => {
     const select = wrapper.find("select");
     const optionOne = wrapper.find("option").at(0);
     expect(optionOne.prop("value")).toEqual("general");
+  });
+
+  it("Tests the radio button option is the correct value", () => {
+    const wrapper = mount(<Form />);
+    const input = wrapper.find('input[type="radio"]').at(1);
+    expect(input.prop("value")).toEqual("medium");
   });
 });

@@ -1,38 +1,57 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navigation {
+  height: 80px;
+}
+#mainNav {
+  height: 80px;
+  padding: 10px;
+  justify-content: flex-end;
+}
+a {
+  color: #faf2e7;
+  font-size: 25px;
+  font-family: cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+div#HomePage {
+  /* padding: 50px; */
+  padding-top: 30px;
+  /* background-color: beige; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.App-body {
+  /* background-color: antiquewhite; */
+  padding: 50px;
+}
+
+label#formLabel,
+legend#difficultSelect {
+  font-family: cursive;
+  font-size: 20px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+div#radioDifficult {
+  text-align: left;
+  font-size: 20px;
+  font-family: cursive;
+}
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: cursive;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+select#inlineFormCustomSelectPref {
+  height: 50px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: cursive;
+  padding: 10px;
 }
