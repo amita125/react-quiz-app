@@ -1,27 +1,31 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+
 //components
-import Form from "./Components/Form";
+import Navigation from "./Components/Navigation";
+import HomePage from "./Containers/HomePage";
+import QuestionPage from "./Containers/QuestionPage";
+import ScorePage from "./Containers/ScorePage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <NavBar />
-      </header>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-lg-2" id="asideArea"></div>
-          <div className="col-lg-8">
-            <div className="App-body"></div>
-          </div>
-          <div className="col-lg-2" id="asideArea"></div>
-        </div>
-      </div>
-      <footer>
-        <p>&copy; 2020</p>
-      </footer>
+      <Router>
+        <Navigation />
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route exact path="/quiz/:id">
+            <QuestionPage />
+          </Route>
+          <Route exact path="/score">
+            <ScorePage />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
