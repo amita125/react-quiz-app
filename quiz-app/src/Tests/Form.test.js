@@ -50,12 +50,3 @@ describe("Form", () => {
     });
 
 });
-
-// const wrapper = mount(<Form />);
-// const select = component.find('select').at(0);
-// const optionEasy = component.find('option').at(0);
-// optionEasy.instance().selected = true;
-// const optionHard = component.find('option').at(2);
-// optionHard.instance().selected = true;
-// input.simulate('change')
-// expect(component.find('select').at(0).props().value).toEqual(['Easy', 'Hard']);
