@@ -15,43 +15,54 @@ a {
   font-family: cursive;
 }
 
-div#HomePage {
-  /* padding: 50px; */
-  padding-top: 30px;
-  /* background-color: beige; */
-}
-
 .App-body {
   /* background-color: antiquewhite; */
-  padding: 50px;
+  padding: 15px;
 }
 
-label#formLabel,
-legend#difficultSelect {
+.instruction {
   font-family: cursive;
-  font-size: 20px;
-  justify-content: center;
-}
-
-div#radioDifficult {
-  text-align: left;
-  font-size: 20px;
-  font-family: cursive;
-}
-input[type="text"] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border-radius: 10px;
-  font-size: 20px;
-  font-family: cursive;
-}
-
-select#inlineFormCustomSelectPref {
-  height: 50px;
-  border-radius: 10px;
   font-size: 15px;
-  font-family: cursive;
   padding: 10px;
+  margin-bottom: 10px;
+}
+
+button#addPlayerButton {
+  border-radius: 20px;
+  font-size: 25px;
+  font-family: cursive;
+  color: cornsilk;
+  padding: 10px;
+}
+input#playerName {
+  padding: 20px;
+  /* border-radius: 10px; */
+  height: 60px;
+  font-size: 20px;
+}
+select#inlineFormCustomSelectPref {
+  height: 60px;
+  padding: 10px;
+}
+label#formLabel {
+  font-size: 20px;
+}
+input[type="radio"] {
+  font-size: 20px;
+}
+.radioButtonGroup {
+  padding: 20px;
+  padding-left: 60px;
+}
+label.input-group-text {
+  font-size: 20px;
+}
+label.custom-control-label {
+  font-size: 20px;
+  justify-content: space-between;
+}
+button#submitButton {
+  padding: 15px;
+  font-size: 30px;
+  border-radius: 50px;
 }

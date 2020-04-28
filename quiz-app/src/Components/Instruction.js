@@ -2,8 +2,9 @@ import React from "react";
 
 function Instruction() {
   return (
-    <div>
+    <div className="instruction">
       <h1>Quiz Intructions</h1>
+      <br />
       <p>
         The quizzes consists of questions carefully designed to help you
         self-assess your comprehension of the information presented on the
