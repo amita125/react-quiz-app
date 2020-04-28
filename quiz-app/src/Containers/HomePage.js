@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Instruction from "../Components/Instruction";
+import {Redirect} from "react-router-dom";
 
 
 class HomePage extends Component {
@@ -9,6 +10,7 @@ class HomePage extends Component {
       category: "",
       level: "",
       players: [{ name: "", score: "0" }],
+      redirect: false
     };
   }
 
@@ -34,6 +36,8 @@ class HomePage extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.loadFunction(this.state);
+    this.setState({redirect: true})
+
   };
 
   handleAddPlayer = () => {
@@ -47,7 +51,12 @@ class HomePage extends Component {
       players: this.state.players.filter((s, index) => playerId !== index),
     });
   };
+
+  
   render() {
+    if(this.props.redirect === true){
+      return <Redirect to='/quiz' />
+    }
     return (
       <div className="container-fluid" id="HomePage">
         <div className="row">
