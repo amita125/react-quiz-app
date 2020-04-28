@@ -13,9 +13,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       questions:{},
-      round:0
+      round:0,
+      score: 0
     };
-    this.updateRound = this.updateRound.bind(this);
+    this.incrementRound = this.incrementRound.bind(this);
+    this.incrementScore = this.incrementScore.bind(this);
   }
 
   componentDidMount = async () => {
@@ -33,9 +35,15 @@ class App extends React.Component {
     }
   }
 
-  updateRound = () => {
+  incrementRound = () => {
     this.setState({round: this.state.round + 1})
   }
+
+  incrementScore = () =>{
+    this.setState({score: this.state.score +1})
+  }
+
+
 
 
   render () {
@@ -47,7 +55,7 @@ class App extends React.Component {
             <Route exact path="/">
               <HomePage />
             </Route>
-            <Route exact path='/quiz' render={ (props) => <QuestionPage {...props}  questions={this.state.questions} round={this.state.round} updateRound={this.updateRound}/>}
+            <Route exact path='/quiz' render={ (props) => <QuestionPage {...props}  questions={this.state.questions} round={this.state.round} incrementScore={this.incrementScore} incrementRound={this.incrementRound}/>}
                />
             <Route exact path="/score">
               <ScorePage />

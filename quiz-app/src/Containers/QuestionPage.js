@@ -15,7 +15,7 @@ class QuestionPage extends React.Component{
         return(
             <Fragment>
                 <Question question={this.props.questions[this.props.round].question}/>
-                <AnswerForm  incorrect_answers={this.props.questions[this.props.round].incorrect_answers} correct_answer={this.props.questions[this.props.round].correct_answer} updateRound={this.props.updateRound} round={this.props.round}/>
+                <AnswerForm  incorrect_answers={this.props.questions[this.props.round].incorrect_answers} correct_answer={this.props.questions[this.props.round].correct_answer} incrementRound={this.props.incrementRound} incrementScore={this.props.incrementScore} round={this.props.round}/>
             </Fragment>
         )
     };
