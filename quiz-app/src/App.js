@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 
@@ -18,7 +17,7 @@ function App() {
           <Route exact path="/">
             <HomePage />
           </Route>
-          <Route exact path="/quiz/:id">
+          <Route exact path="/quiz/">
             <QuestionPage />
           </Route>
           <Route exact path="/score">
@@ -27,7 +26,7 @@ function App() {
         </Switch>
       </Router>
     </div>
-  );
+  )
 }
 
 export default App;
