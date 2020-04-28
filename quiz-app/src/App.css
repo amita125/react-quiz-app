@@ -1,38 +1,68 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navigation {
+  height: 80px;
+}
+#mainNav {
+  height: 80px;
+  padding: 10px;
+  justify-content: flex-end;
+}
+a {
+  color: #faf2e7;
+  font-size: 25px;
+  font-family: cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-body {
+  /* background-color: antiquewhite; */
+  padding: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.instruction {
+  font-family: cursive;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+button#addPlayerButton {
+  border-radius: 20px;
+  font-size: 25px;
+  font-family: cursive;
+  color: cornsilk;
+  padding: 10px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input#playerName {
+  padding: 20px;
+  /* border-radius: 10px; */
+  height: 60px;
+  font-size: 20px;
+}
+select#inlineFormCustomSelectPref {
+  height: 60px;
+  padding: 10px;
+}
+label#formLabel {
+  font-size: 20px;
+}
+input[type="radio"] {
+  font-size: 20px;
+}
+.radioButtonGroup {
+  padding: 20px;
+  padding-left: 60px;
+}
+label.input-group-text {
+  font-size: 20px;
+}
+label.custom-control-label {
+  font-size: 20px;
+  justify-content: space-between;
+}
+button#submitButton {
+  padding: 15px;
+  font-size: 30px;
+  border-radius: 50px;
 }
