@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
-import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
+
+import { Link, Route, Switch, BrowserRouter as Router } from "react-router-dom";
+
 //components
 import Navigation from "./Components/Navigation";
 import HomePage from "./Containers/HomePage";
@@ -11,32 +13,37 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      round: 0,
       category: "",
       level: "",
-      players: [{ name: "", score: "0" }],
+      players: [],
       data: [],
     };
+    this.incrementRound = this.incrementRound.bind(this);
+    this.incrementScore = this.incrementScore.bind(this);
+  }
+    
+  incrementRound = () => {
+    this.setState({round: this.state.round + 1})
   }
 
-  getFormData = (e) => {
-    console.log(e);
-    console.log(e.category);
-    fetch(
-      `https://opentdb.com/api.php?amount=5&category=${e.category}&difficulty=${e.level}`
-    )
-      .then((response) => response.json())
-      .then((quizData) => {
-        this.setState(
+  incrementScore = () =>{
+    this.setState({score: this.state.score +1})
+  }
+ 
+
+  getFormData = async(e) => {
+      const url = `https://opentdb.com/api.php?amount=5&type=multiplecategory=${e.category}&difficulty=${e.level}`;
+      const questions = await (await fetch(url)).json();
+      this.setState(
           {
-            data: quizData.results,
+            data: questions.results,
             category: e.category,
             players: e.players,
             level: e.level,
-          },
-          () => console.log("setState Completed", this.state)
-        );
-      });
+          })
   };
+
 
   render() {
     return (
@@ -47,17 +54,19 @@ class App extends React.Component {
             <Route exact path="/">
               <HomePage loadFunction={this.getFormData} />
             </Route>
-            <Route exact path="/quiz/:id">
-              <QuestionPage />
-            </Route>
+            <Route exact path='/quiz' render={ (props) => <QuestionPage {...props}  questions={this.state.questions} round={this.state.round} incrementScore={this.incrementScore} incrementRound={this.incrementRound}/>}
+               />
             <Route exact path="/score">
               <ScorePage />
             </Route>
           </Switch>
         </Router>
       </div>
+
+
     );
   }
 }
+
 
 export default App;

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-
 import Instruction from "../Components/Instruction";
+
 
 class HomePage extends Component {
   constructor(props) {
@@ -54,6 +54,7 @@ class HomePage extends Component {
           <div className="col-lg-2" id="asideArea"></div>
           <div className="col-lg-8">
             <div className="App-body">
+
               <Instruction />
               <div>
                 <form onSubmit={this.handleSubmit}>
