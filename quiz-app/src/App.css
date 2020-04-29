@@ -1,8 +1,67 @@
 .App {
   text-align: center;
+  height: 100vh;
+}
+div#HomePage {
+  background-image: url("https://walkinlight804088941.files.wordpress.com/2018/03/saturn.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+}
+div#QuestionPage {
+  background-image: url("https://i.pinimg.com/564x/88/b1/8f/88b18ff54e99b6b1a8e922ec09a6a2ed.jpg");
+  background-position: left;
+  background-color: black;
+  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+}
+div#cornerQuestionPage {
+  background-image: url("https://i.etsystatic.com/18747696/r/il/d8abab/1670790120/il_570xN.1670790120_8in3.jpg");
+  background-position: left;
+  background-color: black;
+  background-repeat: no-repeat;
+}
+
+div.question-container {
+  background-image: url("https://i.pinimg.com/564x/df/97/a3/df97a314a0ceb351ffe21b32bcf7ab15.jpg");
+  background-position: center;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 10px;
+
+  padding: 100px;
+  border-radius: 80px;
+}
+.question-container1 {
+  text-align: center;
+  font-size: 25px;
+  padding: 10px;
+  margin-top: 25px;
+}
+.answerArea {
+  font-size: 25px;
+  padding: 10px;
 }
 .navigation {
   height: 80px;
+}
+.navbar {
+  background: black;
+  border: none;
 }
 #mainNav {
   height: 80px;
@@ -17,14 +76,17 @@ a {
 
 .App-body {
   /* background-color: antiquewhite; */
-  padding: 15px;
+  padding: 100px;
+  margin-left: 100px;
+  margin-top: 80px;
 }
-
 .instruction {
   font-family: cursive;
-  font-size: 15px;
-  padding: 10px;
+  font-size: 20px;
+  margin-top: 50px;
+  padding: 60px;
   margin-bottom: 10px;
+  color: darkorange;
 }
 
 button#addPlayerButton {
@@ -49,6 +111,7 @@ label#formLabel {
 }
 input[type="radio"] {
   font-size: 20px;
+  margin-left: 15px;
 }
 .radioButtonGroup {
   padding: 20px;
@@ -65,4 +128,21 @@ button#submitButton {
   padding: 15px;
   font-size: 30px;
   border-radius: 50px;
+}
+
+input[type="submit"] {
+  background-color: #893203;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 100px;
+  border-radius: 20px;
+}
+.radiobig {
+  width: 1.5em;
+  height: 1.5em;
 }

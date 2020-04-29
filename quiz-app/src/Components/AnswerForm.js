@@ -1,13 +1,6 @@
 import React from "react";
 
-import {
-  Route,
-  Switch,
-  BrowserRouter as Router,
-  Redirect,
-} from "react-router-dom";
-
-import { withRouter } from "react-router";
+import { Redirect } from "react-router-dom";
 
 //components
 
@@ -42,7 +35,7 @@ class AnswerForm extends React.Component {
     );
 
     answers = answers.map((x) => (
-      <div key={x}>
+      <div className="answerArea" key={x}>
         <label for={x}>{x} </label>
         <input
           name="answers"

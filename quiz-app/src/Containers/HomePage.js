@@ -26,7 +26,7 @@ class HomePage extends Component {
   handlePlayersName = (playerId) => (e) => {
     const newPlayer = this.state.players.map((player, index) => {
       if (playerId !== index) return player;
-      return { ...player, name: e.target.value };
+      return { ...player, name: e.target.value, score: 0 };
     });
 
     this.setState({ players: newPlayer });
@@ -57,10 +57,11 @@ class HomePage extends Component {
     return (
       <div className="container-fluid" id="HomePage">
         <div className="row">
-          <div className="col-lg-2" id="asideArea"></div>
-          <div className="col-lg-8">
+          <div className="col-lg-6" id="asideArea">
+            <Instruction />
+          </div>
+          <div className="col-lg-6">
             <div className="App-body">
-              <Instruction />
               <div>
                 <form onSubmit={this.handleSubmit}>
                   {this.state.players.map((player, playerId) => (
@@ -221,7 +222,6 @@ class HomePage extends Component {
               </div>
             </div>
           </div>
-          <div className="col-lg-2" id="asideArea"></div>
         </div>
       </div>
     );
