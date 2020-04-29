@@ -1,7 +1,9 @@
-// child of the questionPage
-import React, { Fragment } from "react";
+import React from "react";
+
 
 import { Route, Switch, BrowserRouter as Router, Redirect } from "react-router-dom";
+
+import {withRouter} from 'react-router';
 
 //components
 
@@ -49,13 +51,17 @@ class AnswerForm extends React.Component{
             </div>
             
         );
+        if (this.state.endQuiz === true) {
+            return <Redirect to='/score' />
+        }
         return(
             <form onSubmit={this.handleSubmit}>
                 {answers}
                 <input type='submit' value='Final answer'></input>
             </form>
         )
-    };
-};
+
+  }
+}
 
 export default AnswerForm;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Navigation() {
+const Navigation = () => {
   return (
     <div className="navigation">
       <nav className="navbar navbar-dark bg-dark" id="mainNav">
@@ -9,4 +9,6 @@ export default function Navigation() {
       </nav>
     </div>
   );
-}
+};
+
+export default Navigation;

@@ -6,8 +6,8 @@ import HomePage from "../Containers/HomePage";
 Enzyme.configure({ adapter: new Adapter() });
 
 describe("HomePage", () => {
-  it("should render a form ", () => {
+  it("should render a instruction ", () => {
     const component = shallow(<HomePage />);
-    expect(component.exists("Form")).toEqual(true);
+    expect(component.exists("Instruction")).toEqual(true);
   });
 });

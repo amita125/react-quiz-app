@@ -1,12 +1,11 @@
-
 import React, { Fragment } from "react";
 
 import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 
 //components
 
-import AnswerForm from '../Components/AnswerForm';
-import Question from '../Components/Questions';
+import AnswerForm from "../Components/AnswerForm";
+import Question from "../Components/Questions";
 
 class QuestionPage extends React.Component{
     constructor (props) {
