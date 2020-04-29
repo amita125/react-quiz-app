@@ -11,7 +11,8 @@ class AnswerForm extends React.Component{
     constructor(props){
         super(props);
         this.state= {
-            userAnswer: null
+            userAnswer: null,
+            turnCount: 0
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -19,14 +20,22 @@ class AnswerForm extends React.Component{
     
 
     handleChange = (e) =>{
-        e.preventDefault();
         this.setState({userAnswer:e.target.value});
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        (this.props.correct_answer.includes(this.state.userAnswer)) ? this.props.incrementScore() : console.log('Wrong answer');
-        (this.props.round < 4) ? this.props.incrementRound() : console.log('Error incrementing round');    
+
+        (this.props.correct_answer.includes(this.state.userAnswer)) ? this.props.incrementScore(this.props.players[this.state.turnCount].name) : console.log('Wrong answer');
+
+        this.setState({turnCount: this.state.turnCount +1}); 
+
+        if(this.props.round < 4 && this.state.turnCount == this.props.players.length -1 ){
+            this.props.incrementRound();
+            this.setState({turnCount:0});
+        } else {
+            console.log('Error incrementing round');
+        };
     };
 
 

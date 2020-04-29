@@ -27,7 +27,7 @@ class HomePage extends Component {
   handlePlayersName = (playerId) => (e) => {
     const newPlayer = this.state.players.map((player, index) => {
       if (playerId !== index) return player;
-      return { ...player, name: e.target.value };
+      return { ...player, name: e.target.value, score:0 };
     });
 
     this.setState({ players: newPlayer });

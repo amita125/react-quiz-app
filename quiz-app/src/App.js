@@ -16,7 +16,7 @@ class App extends React.Component {
       round: 0,
       category: "",
       level: "",
-      players: [],
+      players: [{name:'', score:0}],
       data: [],
       redirect: false
     };
@@ -28,9 +28,13 @@ class App extends React.Component {
   incrementRound = () => {
     this.setState({round: this.state.round + 1})
   }
-
-  incrementScore = () =>{
-    this.setState({score: this.state.score +1})
+  
+  incrementScore = (pName ) => {
+    this.setState({
+      players: this.state.players.map( player => 
+        (player.name === pName ? Object.assign(player, { score: this.state.round+1 }) : player)
+      )
+    });
   }
  
 
@@ -66,7 +70,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' render={ (props) => <HomePage {...props}  loadFunction={this.getFormData} redirect={this.state.redirect} />}
                />
-            <Route exact path='/quiz' render={ (props) => <QuestionPage {...props}  questions={this.state.data} round={this.state.round} incrementScore={this.incrementScore} incrementRound={this.incrementRound}/>}
+            <Route exact path='/quiz' render={ (props) => <QuestionPage {...props} players={this.state.players} questions={this.state.data} round={this.state.round} incrementScore={this.incrementScore} incrementRound={this.incrementRound}/>}
                />
             <Route exact path="/score">
               <ScorePage />
