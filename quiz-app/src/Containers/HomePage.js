@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Instruction from "../Components/Instruction";
-import {Redirect} from "react-router-dom";
-
+import { Redirect } from "react-router-dom";
 
 class HomePage extends Component {
   constructor(props) {
@@ -10,7 +9,7 @@ class HomePage extends Component {
       category: "",
       level: "",
       players: [{ name: "", score: "0" }],
-      redirect: false
+      redirect: false,
     };
   }
 
@@ -36,8 +35,7 @@ class HomePage extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.loadFunction(this.state);
-    this.setState({redirect: true})
-
+    this.setState({ redirect: true });
   };
 
   handleAddPlayer = () => {
@@ -52,10 +50,9 @@ class HomePage extends Component {
     });
   };
 
-  
   render() {
-    if(this.props.redirect === true){
-      return <Redirect to='/quiz' />
+    if (this.props.redirect === true) {
+      return <Redirect to="/quiz" />;
     }
     return (
       <div className="container-fluid" id="HomePage">
@@ -63,32 +60,21 @@ class HomePage extends Component {
           <div className="col-lg-2" id="asideArea"></div>
           <div className="col-lg-8">
             <div className="App-body">
-
               <Instruction />
               <div>
                 <form onSubmit={this.handleSubmit}>
-                  <div className="form-group row">
-                    <button
-                      type="button"
-                      onClick={this.handleAddPlayer}
-                      className="btn btn-primary btn-lg btn-block"
-                      id="addPlayerButton"
-                    >
-                      Add Player
-                    </button>
-                  </div>
-
                   {this.state.players.map((player, playerId) => (
-                    <div className="form-group row">
+                    <div className="form-group row" key={`${playerId + 1}`}>
                       <div className="input-group mb-3">
                         <input
                           type="text"
                           placeholder={`Player #${playerId + 1} name`}
                           className="form-control"
                           id="playerName"
-                          name="playerName"
+                          name={`Player${playerId + 1}`}
                           value={player.name}
                           onChange={this.handlePlayersName(playerId)}
+                          required
                         />
                         <div className="input-group-append">
                           <button
@@ -103,6 +89,16 @@ class HomePage extends Component {
                       </div>
                     </div>
                   ))}
+                  <div className="form-group row">
+                    <button
+                      type="button"
+                      onClick={this.handleAddPlayer}
+                      className="btn btn-primary btn-lg btn-block"
+                      id="addPlayerButton"
+                    >
+                      Add Player
+                    </button>
+                  </div>
 
                   <div className="form-group row">
                     <div className="input-group mb-3">
@@ -167,6 +163,7 @@ class HomePage extends Component {
                           className="custom-control-input"
                           value="easy"
                           onChange={this.handleLevel}
+                          required
                         />
                         <label
                           className="custom-control-label"
