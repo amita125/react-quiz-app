@@ -29,10 +29,10 @@ class App extends React.Component {
     this.setState({round: this.state.round + 1})
   }
   
-  incrementScore = (pName ) => {
+  incrementScore = (pName,  ) => {
     this.setState({
       players: this.state.players.map( player => 
-        (player.name === pName ? Object.assign(player, { score: this.state.score+1 }) : player)
+        (player.name === pName ? Object.assign(player, { score: player.score+1 }) : player)
       )
     });
   }
