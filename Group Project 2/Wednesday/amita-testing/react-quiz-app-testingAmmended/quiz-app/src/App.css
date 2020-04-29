@@ -1,0 +1,68 @@
+.App {
+  text-align: center;
+}
+.navigation {
+  height: 80px;
+}
+#mainNav {
+  height: 80px;
+  padding: 10px;
+  justify-content: flex-end;
+}
+a {
+  color: #faf2e7;
+  font-size: 25px;
+  font-family: cursive;
+}
+
+.App-body {
+  /* background-color: antiquewhite; */
+  padding: 15px;
+}
+
+.instruction {
+  font-family: cursive;
+  font-size: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button#addPlayerButton {
+  border-radius: 20px;
+  font-size: 25px;
+  font-family: cursive;
+  color: cornsilk;
+  padding: 10px;
+}
+input#playerName {
+  padding: 20px;
+  /* border-radius: 10px; */
+  height: 60px;
+  font-size: 20px;
+}
+select#inlineFormCustomSelectPref {
+  height: 60px;
+  padding: 10px;
+}
+label#formLabel {
+  font-size: 20px;
+}
+input[type="radio"] {
+  font-size: 20px;
+}
+.radioButtonGroup {
+  padding: 20px;
+  padding-left: 60px;
+}
+label.input-group-text {
+  font-size: 20px;
+}
+label.custom-control-label {
+  font-size: 20px;
+  justify-content: space-between;
+}
+button#submitButton {
+  padding: 15px;
+  font-size: 30px;
+  border-radius: 50px;
+}
