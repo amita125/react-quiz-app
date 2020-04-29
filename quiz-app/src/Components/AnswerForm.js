@@ -3,6 +3,8 @@ import React, { Fragment } from "react";
 
 import { Route, Switch, BrowserRouter as Router, Redirect } from "react-router-dom";
 
+import {withRouter} from 'react-router';
+
 //components
 
 
@@ -26,7 +28,7 @@ class AnswerForm extends React.Component{
     handleSubmit = (e) => {
         e.preventDefault();
         (this.props.correct_answer.includes(this.state.userAnswer)) ? this.props.incrementScore() : console.log('Wrong answer');
-        (this.props.round < 4) ? this.props.incrementRound() : console.log('Error incrementing round');    
+        (this.props.round < 4) ? this.props.incrementRound() : this.setState({endQuiz: true});    
     };
 
 
@@ -40,6 +42,9 @@ class AnswerForm extends React.Component{
             </div>
             
         );
+        if (this.state.endQuiz === true) {
+            return <Redirect to='/score' />
+        }
         return(
             <form onSubmit={this.handleSubmit}>
                 {answers}
