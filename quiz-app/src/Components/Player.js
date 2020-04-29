@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 
+
 class Player extends React.Component{
   constructor (props) {
       super(props)
@@ -11,6 +12,7 @@ class Player extends React.Component{
           </Fragment>
       )
   };
-};
+
+
 
 export default Player;

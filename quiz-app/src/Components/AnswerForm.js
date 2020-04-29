@@ -1,5 +1,5 @@
-// child of the questionPage
-import React, { Fragment } from "react";
+import React from "react";
+
 
 import { Route, Switch, BrowserRouter as Router, Redirect } from "react-router-dom";
 
@@ -51,7 +51,8 @@ class AnswerForm extends React.Component{
                 <input type='submit' value='Final answer'></input>
             </form>
         )
-    };
-};
+
+  }
+}
 
 export default AnswerForm;
