@@ -25,10 +25,10 @@ class ScorePage extends React.Component{
         return winnerNames
     };
     render() {
-        const usersInfo = [{name: "Steven", score: 1},{name: "Liam", score: 3},{name: "Matt", score: 4},{name: "Amita", score: 4}];
-        let winnerNames = this.getWinners(usersInfo) //this.props.usersInfo is an array with multiple users, each with a name and a score
+        // const usersInfo = [{name: "Steven", score: 1},{name: "Liam", score: 3},{name: "Matt", score: 4},{name: "Amita", score: 4}];
+        let winnerNames = this.getWinners(this.props.players) //this.props.usersInfo is an array with multiple users, each with a name and a score
         console.log(winnerNames);
-        let players = usersInfo.map((x) =>
+        let players = this.props.players.map((x) =>
             <Player userInfo={x} winnerNames={winnerNames}/>
         );
         return(

@@ -12,6 +12,7 @@ class Player extends React.Component{
           </Fragment>
       )
   };
+}
 
 
 
