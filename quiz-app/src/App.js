@@ -72,9 +72,8 @@ class App extends React.Component {
                />
             <Route exact path='/quiz' render={ (props) => <QuestionPage {...props} players={this.state.players} questions={this.state.data} round={this.state.round} incrementScore={this.incrementScore} incrementRound={this.incrementRound}/>}
                />
-            <Route exact path="/score">
-              <ScorePage />
-            </Route>
+            <Route exact path='/score' render={ (props) => <ScorePage {...props} players={this.state.players} />}
+               />
           </Switch>
         </Router>
       </div>
