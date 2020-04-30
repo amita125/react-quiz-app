@@ -1,13 +1,7 @@
 import React from "react";
 import "./App.css";
 
-import {
-  Redirect,
-  Link,
-  Route,
-  Switch,
-  BrowserRouter as Router,
-} from "react-router-dom";
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 
 //components
 import Navigation from "./Components/Navigation";
@@ -24,12 +18,21 @@ class App extends React.Component {
       level: "",
       players: [{ name: "", score: 0 }],
       data: [],
-      redirect: false,
     };
     this.incrementRound = this.incrementRound.bind(this);
     this.incrementScore = this.incrementScore.bind(this);
     this.getFormData = this.getFormData.bind(this);
+    this.resetRedirect = this.resetRedirect.bind(this);
+    this.resetRound = this.resetRound.bind(this);
   }
+
+  resetRedirect = () => {
+    this.setState({ redirect: false });
+  };
+
+  resetRound = () => {
+    this.setState({ round: 0 });
+  };
 
   incrementRound = () => {
     this.setState({ round: this.state.round + 1 });
@@ -39,7 +42,7 @@ class App extends React.Component {
     this.setState({
       players: this.state.players.map((player) =>
         player.name === pName
-          ? Object.assign(player, { score: this.state.round + 1 })
+          ? Object.assign(player, { score: player.score + 1 })
           : player
       ),
     });
@@ -56,6 +59,7 @@ class App extends React.Component {
         level: e.level,
         redirect: true,
       });
+      console.log(questions);
     } else {
       console.log("failed");
     }
@@ -84,17 +88,23 @@ class App extends React.Component {
               render={(props) => (
                 <QuestionPage
                   {...props}
+                  resetRedirect={this.resetRedirect}
                   players={this.state.players}
                   questions={this.state.data}
                   round={this.state.round}
                   incrementScore={this.incrementScore}
                   incrementRound={this.incrementRound}
+                  resetRound={this.resetRound}
                 />
               )}
             />
-            <Route exact path="/score">
-              <ScorePage />
-            </Route>
+            <Route
+              exact
+              path="/score"
+              render={(props) => (
+                <ScorePage {...props} players={this.state.players} />
+              )}
+            />
           </Switch>
         </Router>
       </div>

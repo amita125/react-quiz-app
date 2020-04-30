@@ -9,7 +9,6 @@ class HomePage extends Component {
       category: "",
       level: "",
       players: [{ name: "", score: "0" }],
-      redirect: false,
     };
   }
 
@@ -35,7 +34,6 @@ class HomePage extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.loadFunction(this.state);
-    this.setState({ redirect: true });
   };
 
   handleAddPlayer = () => {
@@ -62,7 +60,10 @@ class HomePage extends Component {
           </div>
           <div className="col-lg-6">
             <div className="App-body">
-              <div>
+              <span className="iconForm" role="img" aria-label="emoji">
+                😕≈🤯🤜🧠~~~~~👀💢
+              </span>
+              <div className="playerForm">
                 <form onSubmit={this.handleSubmit}>
                   {this.state.players.map((player, playerId) => (
                     <div className="form-group row" key={`${playerId + 1}`}>
@@ -81,7 +82,7 @@ class HomePage extends Component {
                           <button
                             type="button"
                             onClick={this.handleRemovePlayer(playerId)}
-                            className="btn btn-outline-danger"
+                            className="btn btn-danger"
                             id="removePlayerButton"
                           >
                             X

@@ -4,15 +4,16 @@ class Player extends React.Component {
   render() {
     return (
       <Fragment>
-        <h4
+        <p
+          className="playerScore"
           style={
             this.props.winnerNames.includes(this.props.userInfo.name)
-              ? { fontWeight: "bold" }
-              : { fontWeight: "normal" }
+              ? { border: "solid 3px red" }
+              : { border: "none" }
           }
         >
           {this.props.userInfo.name}: {this.props.userInfo.score}/5
-        </h4>
+        </p>
       </Fragment>
     );
   }
