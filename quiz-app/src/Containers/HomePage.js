@@ -8,8 +8,7 @@ class HomePage extends Component {
     this.state = {
       category: "",
       level: "",
-      players: [{ name: "", score: "0" }],
-      redirect: false,
+      players: [{ name: "", score: "0" }]
     };
   }
 
@@ -35,7 +34,6 @@ class HomePage extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.loadFunction(this.state);
-    this.setState({ redirect: true });
   };
 
   handleAddPlayer = () => {

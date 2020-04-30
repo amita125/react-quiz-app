@@ -12,11 +12,9 @@ import {withRouter} from 'react-router';
 class AnswerForm extends React.Component{
     constructor(props){
         super(props);
-        this.state= {
-            userAnswer: null,
-            turnCount: 0,
-            endQuiz: false
-        }
+        // this.state= {
+        //     endQuiz: false
+        // }
         this.userAnswer = null;
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
@@ -30,24 +28,28 @@ class AnswerForm extends React.Component{
 
     handleChange = (e) =>{
         this.userAnswer = e.target.value;
-        // this.setState({userAnswer:e.target.value});
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
 
-        (this.props.correct_answer.includes(this.userAnswer)) ? this.props.incrementScore(this.props.players[this.state.turnCount].name) : console.log('Wrong answer');
+        (this.props.correct_answer.includes(this.userAnswer)) ? this.props.incrementScore(this.props.players[this.props.turnCount].name) : console.log('Wrong answer');
 
-        this.setState({turnCount: this.state.turnCount +1}); 
+        this.props.incrementTurn(); 
         this.userAnswer = null;
 
-        if(this.props.round < 4 && this.state.turnCount == this.props.players.length -1 ){
+        if(this.props.round < 4 && this.props.turnCount == this.props.players.length -1 ){
+            console.log(this.props.turnCount)
             this.props.incrementRound();
-            this.setState({turnCount:0});
+            // this.setState({turnCount:0});
+            this.props.resetTurn();
             
-        } else if(this.props.round === 4 && this.state.turnCount == this.props.players.length -1){
-            this.setState({endQuiz:true});
+        } else if(this.props.round === 4 && this.props.turnCount == this.props.players.length -1){
+            this.props.redirectScore();
+            this.props.resetRedirect();
+            this.props.resetRound();
         };
+        
     };
 
 
@@ -61,10 +63,11 @@ class AnswerForm extends React.Component{
                 <input name='answers' key={x} value={x} type="radio"  onChange={this.handleChange}></input>
             </div>   
         );
+        console.log(this.props.turnCount)
         
-        if (this.state.endQuiz === true) {
-            return <Redirect to='/score' />
-        }
+        // if (this.state.endQuiz === true) {
+        //     return <Redirect to='/score' />
+        // }
         return(
             <form onSubmit={this.handleSubmit}>
                 {answers}
