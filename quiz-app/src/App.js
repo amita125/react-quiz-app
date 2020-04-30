@@ -49,6 +49,7 @@ class App extends React.Component {
  
 
   getFormData = async e => {
+    var fetch = require("node-fetch");
       const url = `https://opentdb.com/api.php?amount=5&type=multiple&category=${e.category}&difficulty=${e.level}`;
       const questions = await (await fetch(url)).json();
       if(questions){
