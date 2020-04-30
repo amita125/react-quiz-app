@@ -20,7 +20,7 @@ describe("Question component", () => {
   // });
 
   it("Renders div.question-container in Question comp", () => {
-    expect(component.exists(".question-container")).toEqual(true);
+    expect(component.exists(".question-container1")).toEqual(true);
   });
 
   it("Renders <h3> in Question comp", () => {

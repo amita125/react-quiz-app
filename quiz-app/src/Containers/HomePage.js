@@ -8,7 +8,7 @@ class HomePage extends Component {
     this.state = {
       category: "",
       level: "",
-      players: [{ name: "", score: "0" }]
+      players: [{ name: "", score: "0" }],
     };
   }
 
@@ -25,7 +25,7 @@ class HomePage extends Component {
   handlePlayersName = (playerId) => (e) => {
     const newPlayer = this.state.players.map((player, index) => {
       if (playerId !== index) return player;
-      return { ...player, name: e.target.value, score:0 };
+      return { ...player, name: e.target.value, score: 0 };
     });
 
     this.setState({ players: newPlayer });
@@ -55,11 +55,15 @@ class HomePage extends Component {
     return (
       <div className="container-fluid" id="HomePage">
         <div className="row">
-          <div className="col-lg-2" id="asideArea"></div>
-          <div className="col-lg-8">
+          <div className="col-lg-6" id="asideArea">
+            <Instruction />
+          </div>
+          <div className="col-lg-6">
             <div className="App-body">
-              <Instruction />
-              <div>
+              <span className="iconForm" role="img" aria-label="emoji">
+                😕≈🤯🤜🧠~~~~~👀💢
+              </span>
+              <div className="playerForm">
                 <form onSubmit={this.handleSubmit}>
                   {this.state.players.map((player, playerId) => (
                     <div className="form-group row" key={`${playerId + 1}`}>
@@ -78,7 +82,7 @@ class HomePage extends Component {
                           <button
                             type="button"
                             onClick={this.handleRemovePlayer(playerId)}
-                            className="btn btn-outline-danger"
+                            className="btn btn-danger"
                             id="removePlayerButton"
                           >
                             X
@@ -219,7 +223,6 @@ class HomePage extends Component {
               </div>
             </div>
           </div>
-          <div className="col-lg-2" id="asideArea"></div>
         </div>
       </div>
     );
