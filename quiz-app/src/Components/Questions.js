@@ -6,7 +6,7 @@ class Question extends React.Component {
       <div className="question-container1">
         <h3>Question : &nbsp;{this.props.qNumber + 1}</h3>
 
-        <p>{Parser(this.props.question)}</p>
+        <p>{Parser(String(this.props.question))}</p>
       </div>
     );
   }

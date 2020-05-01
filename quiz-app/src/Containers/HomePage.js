@@ -95,7 +95,7 @@ class HomePage extends Component {
                     <button
                       type="button"
                       onClick={this.handleAddPlayer}
-                      className="btn btn-primary btn-lg btn-block"
+                      className="btn btn-lg btn-block"
                       id="addPlayerButton"
                     >
                       Add Player
@@ -104,7 +104,7 @@ class HomePage extends Component {
 
                   <div className="form-group row">
                     <div className="input-group mb-3">
-                      <div className="input-group-prepend">
+                      <div className="input-group-prepend ">
                         <label
                           className="input-group-text"
                           htmlFor="category"
@@ -153,58 +153,61 @@ class HomePage extends Component {
                     </div>
                   </div>
                   <div className="form-group row">
-                    <label className="input-group-text">
-                      Select Difficulty
-                    </label>
-                    <div className="radioButtonGroup">
-                      <div className="custom-control custom-radio custom-control-inline">
-                        <input
-                          type="radio"
-                          id="customRadioInline1"
-                          name="difficulty"
-                          className="custom-control-input"
-                          value="easy"
-                          onChange={this.handleLevel}
-                          required
-                        />
-                        <label
-                          className="custom-control-label"
-                          htmlFor="customRadioInline1"
-                        >
-                          Easy
-                        </label>
-                      </div>
-                      <div className="custom-control custom-radio custom-control-inline">
-                        <input
-                          type="radio"
-                          id="customRadioInline2"
-                          name="difficulty"
-                          className="custom-control-input"
-                          value="medium"
-                          onChange={this.handleLevel}
-                        />
-                        <label
-                          className="custom-control-label"
-                          htmlFor="customRadioInline2"
-                        >
-                          Medium
-                        </label>
-                      </div>
-                      <div className="custom-control custom-radio custom-control-inline">
-                        <input
-                          type="radio"
-                          id="customRadioInline3"
-                          name="difficulty"
-                          className="custom-control-input"
-                          value="hard"
-                          onChange={this.handleLevel}
-                        />
-                        <label
-                          className="custom-control-label"
-                          htmlFor="customRadioInline3"
-                        >
-                          Hard
-                        </label>
+                    <div className="input-group mb-3">
+                      <label className="input-group-text">
+                        Select Difficulty
+                      </label>
+
+                      <div className="radioButtonGroup">
+                        <div className="custom-control custom-radio custom-control-inline">
+                          <input
+                            type="radio"
+                            id="customRadioInline1"
+                            name="difficulty"
+                            className="custom-control-input"
+                            value="easy"
+                            onChange={this.handleLevel}
+                            required
+                          />
+                          <label
+                            className="custom-control-label"
+                            htmlFor="customRadioInline1"
+                          >
+                            Easy
+                          </label>
+                        </div>
+                        <div className="custom-control custom-radio custom-control-inline">
+                          <input
+                            type="radio"
+                            id="customRadioInline2"
+                            name="difficulty"
+                            className="custom-control-input"
+                            value="medium"
+                            onChange={this.handleLevel}
+                          />
+                          <label
+                            className="custom-control-label"
+                            htmlFor="customRadioInline2"
+                          >
+                            Medium
+                          </label>
+                        </div>
+                        <div className="custom-control custom-radio custom-control-inline">
+                          <input
+                            type="radio"
+                            id="customRadioInline3"
+                            name="difficulty"
+                            className="custom-control-input"
+                            value="hard"
+                            onChange={this.handleLevel}
+                          />
+                          <label
+                            className="custom-control-label"
+                            htmlFor="customRadioInline3"
+                          >
+                            Hard
+                          </label>
+                        </div>
                       </div>
                     </div>
                   </div>
