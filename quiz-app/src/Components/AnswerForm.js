@@ -1,5 +1,5 @@
 import React from "react";
-
+import Parser from "html-react-parser";
 //components
 
 class AnswerForm extends React.Component {
@@ -58,7 +58,7 @@ class AnswerForm extends React.Component {
 
     answers = answers.map((x) => (
       <div className="answerArea" key={x}>
-        <label htmlFor={x}>{x} </label>
+        <label htmlFor={x}>{Parser(x)} </label>
         <input
           name="answers"
           key={x}
