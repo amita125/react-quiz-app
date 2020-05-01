@@ -118,7 +118,7 @@ button#addPlayerButton {
   border-radius: 20px;
   font-size: 25px;
   font-family: monospace;
-  color: beige;
+  color: black;
   padding: 10px;
   background-color: #64a1a3;
 }
@@ -180,7 +180,7 @@ button#submitButton {
   font-size: 30px;
   border-radius: 50px;
   background-color: #64a1a3;
-  color: beige;
+  color: black;
   width: 50%;
   font-family: monospace;
 }
