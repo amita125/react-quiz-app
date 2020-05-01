@@ -40,9 +40,9 @@ div.question-container {
   background-color: black;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: 10px;
+  margin-top: 2px;
   border: black;
-  padding: 94px;
+  padding: 90px;
   background-blend-mode: luminosity;
   border-radius: 15px;
 }
@@ -112,13 +112,15 @@ span.iconForm {
 .playerForm {
   padding-top: 50px;
   color: #62e8e8;
+  font-family: monospace;
 }
 button#addPlayerButton {
   border-radius: 20px;
   font-size: 25px;
   font-family: monospace;
-  color: cornsilk;
+  color: black;
   padding: 10px;
+  background-color: #64a1a3;
 }
 input#playerName {
   padding: 20px;
@@ -129,9 +131,12 @@ input#playerName {
 select#inlineFormCustomSelectPref {
   height: 60px;
   padding: 10px;
+  font-size: 20px;
 }
 label#formLabel {
-  font-size: 20px;
+  background-color: #dc3545;
+  font-size: 25px;
+  color: beige;
 }
 input[type="radio"] {
   font-size: 30px;
@@ -141,11 +146,28 @@ input[type="radio"] {
   margin-top: 5px;
 }
 .radioButtonGroup {
-  padding: 20px;
-  padding-left: 60px;
+  padding-left: 15px;
 }
 label.input-group-text {
-  font-size: 20px;
+  font-size: 22px;
+}
+.input-group-text {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 0;
+  /* font-size: 1rem; */
+  font-weight: 400;
+  line-height: 1.5;
+  color: beige;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #dc3545;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  font-size: 25px;
 }
 label.custom-control-label {
   font-size: 25px;
@@ -157,6 +179,10 @@ button#submitButton {
   padding: 15px;
   font-size: 30px;
   border-radius: 50px;
+  background-color: #64a1a3;
+  color: black;
+  width: 50%;
+  font-family: monospace;
 }
 
 input[type="submit"] {

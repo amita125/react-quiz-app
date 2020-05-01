@@ -58,7 +58,7 @@ class AnswerForm extends React.Component {
 
     answers = answers.map((x) => (
       <div className="answerArea" key={x}>
-        <label htmlFor={x}>{Parser(x)} </label>
+        <label htmlFor={x}>{Parser(String(x))} </label>
         <input
           name="answers"
           key={x}
