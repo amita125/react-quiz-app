@@ -7,7 +7,7 @@ class ScorePage extends React.Component {
     this.getWinner = this.getWinners.bind(this);
   }
   getWinners(array) {
-    let winners = [{ name: null, score: 2 }];
+    let winners = [{ name: null, score: 1 }];
     let winnerNames = [];
     //For every element in usersInfo
     for (let index = 0; index < array.length; index++) {

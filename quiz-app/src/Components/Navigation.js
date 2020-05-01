@@ -5,7 +5,10 @@ const Navigation = () => {
   return (
     <div className="navigation">
       <nav className="navbar" id="mainNav">
-        <Link to="/">Quiz Application</Link>
+        
+        <button type="button" className="btn btn-outline-dark">
+          <Link to="/">Spring Lambs</Link>
+        </button>
       </nav>
     </div>
   );
